@@ -1,5 +1,5 @@
 // We don't have to loop till end of the given number to find out all the factors. 
-// We just have to loop till reaching the given number's squareroot. (this reduces complexity from 0(N) to 0(logN))
+// We just have to loop till reaching the given number's squareroot. (this reduces complexity from O(N) to O(logN))
 // After that point we, can figure out the rest of the factors by dividing the given number with the already found factors.
 
 // There is one special case with this logic. 
@@ -12,7 +12,7 @@ function findFactors (num) {
     const latterFactors = []
     const sqrt = Math.sqrt(num)
     
-    for (let i = 1; i <= sqrt; i++) {
+    for (let i = 1; i <= sqrt; i++) { // i*i <= num (better way)
         if (num % i == 0) {
             startingFactors.push(i)
             latterFactors.push(num / i)
